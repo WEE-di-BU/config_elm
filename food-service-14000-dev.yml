@@ -3,6 +3,19 @@ server:
 spring:
   application:
     name: "food-service"
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/elm_jpa_test?useSSL=false
+    username: root
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 5
+    password: 'wlx204617'
+    
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: false
 eureka:
   instance:
     prefer-ip-address: true
